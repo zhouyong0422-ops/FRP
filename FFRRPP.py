@@ -228,7 +228,8 @@ if uploaded_file is not None:
                                 'fwd': f_variants, 'rev': r_variants, 'probe': p_variants,
                                 'fStats': f_stats, 'pStats': p_stats, 'rStats': r_stats,
                                 'size': r_start + R_LEN - i, 'start': i, 'score': total_score,
-                                'details': {'base': base_score, 'pBonus': probe_bonus, 'pPenalty': -probePenalty, 'mixF': mix_f, 'mixR': mix_r, 'tmPenalty': tm_penalty}
+                                # 修复了这里的拼写错误：把 -probePenalty 改成了 -probe_penalty
+                                'details': {'base': base_score, 'pBonus': probe_bonus, 'pPenalty': -probe_penalty, 'mixF': mix_f, 'mixR': mix_r, 'tmPenalty': tm_penalty}
                             })
 
             progress_bar.empty()
