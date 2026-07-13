@@ -318,7 +318,7 @@ if uploaded_file is not None:
             
             all_candidates = []
             min_gap = 1
-            max_gap = 80
+            max_gap = 50
             total_steps = seq_len - 160
             
             status_text.info("⏳ 正在进行全量长度矩阵竞争与热力学加权计算，请耐心等待...")
