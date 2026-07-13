@@ -318,8 +318,8 @@ if uploaded_file is not None:
             
             all_candidates = []
             min_gap = 1
-            max_gap = 15
-            total_steps = seq_len - 150
+            max_gap = 80
+            total_steps = seq_len - 160
             
             status_text.info("⏳ 正在进行全量长度矩阵竞争与热力学加权计算，请耐心等待...")
             
@@ -358,7 +358,7 @@ if uploaded_file is not None:
                                     r_len = r_obj['length']
 
                                     amplicon_size = r_start + r_len - i
-                                    if amplicon_size < 70 or amplicon_size > 150:
+                                    if amplicon_size < 70 or amplicon_size > 160:
                                         continue
 
                                     min_f_tm = min(float(calc_tm(v)) for v in f_variants)
@@ -436,7 +436,7 @@ if uploaded_file is not None:
 
             # 结果生成与展示
             if not global_loci_groups:
-                st.error("⚠️ **体系设计失败**：在该序列库中未能找到产物 70-150bp、探针不以 G 开头且覆盖度达标的黄金区。")
+                st.error("⚠️ **体系设计失败**：在该序列库中未能找到产物 70-160bp、探针不以 G 开头且覆盖度达标的黄金区。")
             else:
                 st.success(f"🎉 **寻优完成！** 共提炼出 {len(global_loci_groups)} 个独立黄金靶区。")
                 
